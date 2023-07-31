@@ -27,6 +27,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['body', 'title'], 'required'],
             [['body'], 'string'],
             [['title'], 'string', 'max' => 255],
         ];
@@ -38,9 +39,9 @@ class Post extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Title'),
-            'body' => Yii::t('app', 'Body'),
+            'id' => Yii::t('app/messages/post', 'ID'),
+            'title' => Yii::t('app/messages/post', 'Title'),
+            'body' => Yii::t('app/messages/post', 'Body'),
         ];
     }
 
